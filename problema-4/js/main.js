@@ -3,6 +3,15 @@
 // Crear un array de numeros para obtener distinta informacion de los mismos
 const arrayNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+// Muestra un array de numeros
+console.log(arrayNumeros);
+console.log('cantidad: ' + cantidadNumeros(arrayNumeros));
+console.log('pares e impares: ' + cantidadParesImpares(arrayNumeros));
+console.log('mayores a 5: ' + cantidadMayoresA(arrayNumeros, 5));
+console.log('menor y mayor: ' + menorMayor(arrayNumeros));
+console.log('porcentaje numero minimo: ' + porcentajeNumeroMinimo(arrayNumeros));
+
+
 // Crear una funcion que reciba un array de numeros y devuelva la cantidad de numeros del mismo
 function cantidadNumeros(array) {
   return array.length;
@@ -76,3 +85,4 @@ function porcentajeNumeroMinimo(array) {
   promedio = promedio / array.length;
   return `El porcentaje del numero minimo en base al mayor es ${porcentaje} y el porcentaje del promedio de todos los numeros es ${promedio}`;
 }
+

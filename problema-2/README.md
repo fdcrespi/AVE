@@ -2,7 +2,17 @@ Este es un proyecto [Next.js](https://nextjs.org/) inicializado con [`create-nex
 
 ## Empezando
 
-Primero, ejecuta el servidor de desarrollo:
+Primero, instala las dependencias:
+
+```bash
+npm install
+# o
+yarn install
+# o
+pnpm install
+```
+
+Segundo, ejecuta el servidor de desarrollo:
 
 ```bash
 npm run dev
