@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardMedia, TextField, Typography } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import Head from 'next/head'
 import Image from 'next/image';
@@ -8,7 +8,6 @@ export default function Home() {
 
   const [images, setImages] = useState([]);
   const [limit, setLimit] = useState([]);
-  const accessToken = useState('yLDYdf6bH4qJbWywp298igTt0o5rwXafwUWGUhEbeM5vXkrCSqni961v');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
