@@ -4,6 +4,7 @@
  * @param {string} type2 - Tipo de pokemon
  *   */
 
+import { Box, Button, List, ListItem, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function PokemonTypes() {
@@ -40,35 +41,48 @@ export default function PokemonTypes() {
   if (loading) return (<p>Cargando...</p>)
 
   return (
-    <>
-      <h1>Pokemones con 2 tipos</h1>
-      <form onSubmit={getPokemons} style={{ marginBottom: '2rem'}}>
-        <label htmlFor="type1">Tipo de pokemon 1</label>
-        <input
-          id="type1"
-          type="text"
-          value={type1}
-          onChange={(e) => setType1(e.target.value)}
-        />
-        <label htmlFor="type2">Tipo de pokemon 2</label>
-        <input
-          id="type2"
-          type="text"
-          value={type2}
-          onChange={(e) => setType2(e.target.value)}
-        />
-        <button type="submit">Buscar</button>
-      </form>
-
-      <ul>
-
+    <Box sx={{ p:5, m:5 }}>
+      <Typography variant="h5" component="div" gutterBottom>
+        Buscar pokemones por tipos
+      </Typography>
+      <Box
+        component='form'
+        sx={{
+          '& > :not(style)': { m: 1 },
+          mb: 2,
+        }}
+        noValidate
+        autoComplete="off"
+        onSubmit={getPokemons}
+      >
+        <Typography variant="h6" component="div" gutterBottom>
+          Ingrese dos tipos de pokemon para obtener los pokemones que tengan esos tipos
+        </Typography>
+        <TextField name="type1" id="type1" label="Tipo de pokemon 1" variant="standard" value={type1} onChange={(e) => setType1(e.target.value)} required/>
+        <TextField name="type2" id="type2" label="Tipo de pokemon 2" variant="standard" value={type2} onChange={(e) => setType2(e.target.value)} required/>
+        <Button variant="contained" type="submit">Buscar</Button>
+      </Box>
+      <List sx={{ width: '100%', maxWidth: 360 }}>
+        <Typography variant="h5" component="h5" gutterBottom>
+          Pokemones encontrados:
+        </Typography>
         {
-        message ? <p>{message}</p> :
-        pokemons && pokemons.map((pokemon) => (
-          <li key={pokemon.pokemon.name}>{pokemon.pokemon.name}</li>
-        ))}
-      </ul>
-    </>
+          message ? <Typography variant="h6" component="h6" gutterBottom>{message}</Typography> :
+          pokemons && pokemons.map((pokemon) => (
+            <Box variant="div" sx={{ display: 'flex', justifyContent: 'center' }}>
+              <ListItem key={pokemon.pokemon.name} sx={{ fontSize: 25 }}>
+                {pokemon.pokemon.name}
+              </ListItem>
+            </Box>
+          ))
+
+        }
+      </List>
+
+      
+
+      <Button variant="contained" href="/">Volver</Button>
+    </Box>
   );
 
 }

@@ -26,6 +26,22 @@ export default function Home() {
             <h2>Pokemon con 2 tipos &rarr;</h2>
             <p>Dado 2 tipos, devuelve los pokemon que cumplen con estos</p>
           </Link>
+          <Link href="pokemon-number" className={styles.card}>
+            <h2>Número de pokemon &rarr;</h2>
+            <p>Dado un nombre, devuelve el numero del mismo</p>
+          </Link>
+          <Link href="pokemon-stats" className={styles.card}>
+            <h2>Stats de pokemon &rarr;</h2>
+            <p>Dado un numero, devuelve los stats del mismo</p>
+          </Link>
+          <Link href="pokemon-order" className={styles.card}>
+            <h2>Pokemones ordenados &rarr;</h2>
+            <p>Dado un orden y un arreglo de ids, devuelve los pokemones ordenados</p>
+          </Link>
+          <Link href="number-type" className={styles.card}>
+            <h2>Tipo de pokemon por id &rarr;</h2>
+            <p>Dado un numero y un tipo, devuelve si el pokemon tiene ese tipo</p>
+          </Link>
         </div>
 
       </main>
