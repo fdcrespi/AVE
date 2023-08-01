@@ -28,3 +28,6 @@ pnpm dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
+
+Nota:
+Cada uno de los problemas tienen su propio README
