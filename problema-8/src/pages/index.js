@@ -15,7 +15,6 @@ export default function Home() {
     const res = await fetch('https://rickandmortyapi.com/api/character')
     const data = await res.json();
     setImages(data.results.slice(0, limit));
-    console.log(data);
   }
    
   return (
@@ -54,17 +53,17 @@ export default function Home() {
               variant="standard" 
               label="cantidad" 
               onChange={(e) => {
-                if (e.target.value > 20) {
-                  alert('El limite es 20');
-                  e.target.value = 20;
-                  setLimit(20);
+                if (e.target.value > 15) {
+                  alert('El limite es 15');
+                  e.target.value = 15;
+                  setLimit(15);
                   return;
                 }
                 setLimit(e.target.value)
               }} 
               minValue={0}
               defaultValue={0}
-              maxValue={20}
+              maxValue={15}
             />
             <Button type="submit" variant="contained">Search</Button>
           </Box>
